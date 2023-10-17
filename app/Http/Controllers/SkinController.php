@@ -27,6 +27,8 @@ class SkinController extends Controller
         if($validator->fails()){
             return response(['error' => $validator->errors()], 401);
         }else{
+            $types = json_encode($request->input('types'));
+            $request['types'] = $types;
             $skin = SkinModel::create($request->all());
             return response(['skin' => $skin, 'message' => "Skin created!"], 200);
         }
@@ -48,6 +50,8 @@ class SkinController extends Controller
             if($validator->fails()){
                 return response(['error' => $validator->errors()], 401);
             }else{
+                $types = json_encode($request->input('types'));
+                $request['types'] = $types;
                 $skin->update($request->all());
                 return response(['Skin updated' => $skin, 'message' => "Skin updated!"], 200);
             }

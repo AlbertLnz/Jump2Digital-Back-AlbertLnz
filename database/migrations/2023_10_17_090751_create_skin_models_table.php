@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('skin_models', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('types');
-            $table->string('price');
+            $table->json('types');
+            $table->smallInteger('price');
             $table->string('color');
             $table->string('category');
             $table->string('design_pattern');
