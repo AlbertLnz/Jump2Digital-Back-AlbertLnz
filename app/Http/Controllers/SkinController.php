@@ -12,6 +12,14 @@ class SkinController extends Controller
         return SkinModel::all();
     }
 
+    public function readOne($id){
+        $skin = SkinModel::find($id);
+        if($skin){
+            return response(['skin' => $skin, 'message' => "Skin found!"], 200);
+        }
+        return response(['message' => "Skin NOT found!"], 404);
+    }
+
     public function create(Request $request){
 
         $validator = Validator::make($request->all(), [
@@ -56,7 +64,7 @@ class SkinController extends Controller
                 return response(['Skin updated' => $skin, 'message' => "Skin updated!"], 200);
             }
         }else{
-            return response(['error' => "We can't find any skin with this ID!"], 401);
+            return response(['error' => "We can't find any skin with this ID!"], 404);
         }
 
     }
@@ -67,7 +75,7 @@ class SkinController extends Controller
             $skin->delete();
             return response(['message' => "Skin deleted!"], 200);
         }else{
-            return response(['error' => "We can't find any skin with this ID!"], 401);
+            return response(['error' => "We can't find any skin with this ID!"], 404);
         }
     }
 

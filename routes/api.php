@@ -25,3 +25,4 @@ Route::group(['prefix' => 'skins'], function() {
     Route::put('/{id}', [SkinController::class, 'update'])->name('api.skins.update');
     Route::delete('/{id}', [SkinController::class, 'delete'])->name('api.skins.delete');
 });
+Route::get('/skin/getskin/{id}', [SkinController::class,'readOne'])->name('api.skins.readOne');
