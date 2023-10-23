@@ -24,13 +24,17 @@ class SkinSeeder extends Seeder
                 "category" => "Outfit",
                 "design_pattern" => "Scales",
                 "rarity" => "Legendary",
-                "stock" => rand(0, 100),
+                "bought" => false,
             ]);
 
-            DB::table('skin_user')->insert([
-                "user_id" => intval(User::inRandomOrder()->first()->id),
-                'skin_id' => intval(Skin::latest()->first()->id),
-            ]);
+            $rand_number = rand(1,3);
+            if($rand_number === 1){ // 1 of 3 possibilities to assign a skin to a user.
+                DB::table('skin_user')->insert([
+                    "user_id" => intval(User::inRandomOrder()->first()->id),
+                    'skin_id' => intval(Skin::latest()->first()->id),
+                ]);
+                Skin::latest()->first()->update(['bought' => true]);
+            }
         }
     }
 }

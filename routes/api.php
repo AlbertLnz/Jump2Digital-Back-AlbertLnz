@@ -23,7 +23,8 @@ Route::post('login', [PassportController::class, 'login'])->name('api.login');
 
 Route::get('/skins/available', [SkinController::class, 'availableSkins'])->name('api.skins.available'); // 1. GET /skins/avaible - Devuelve una lista de todas las skins disponibles para comprar
 Route::post('/skins/buy/{skin_id}', [SkinController::class, 'buySkin'])->name('api.skins.buy')->middleware('auth:api'); // 2. POST /skins/buy - Permite a los usuarios adquirir una skin y guardarla en la base de datos
-
+Route::get('/skins/myskins', [SkinController::class, 'userSkins'])->name('api.skins.myskins')->middleware('auth:api'); // 3. GET /skins/myskins - Devuelve una lista de las skins compradas por el usuario
+Route::put('skins/color', [SkinController::class, 'changeSkinColor'])->name('')->middleware('auth:api'); // 4. PUT /skins/color - Permite a los usuarios cambiar el color de una skin comprada. 
 
 
 Route::group(['prefix' => 'skins'], function() {

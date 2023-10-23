@@ -7,6 +7,7 @@ use App\Models\Skin;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class SkinController extends Controller
 {
@@ -30,7 +31,7 @@ class SkinController extends Controller
         
         if($user->wallet >= $skin->price){
             User::where('id', $user->id)->decrement('wallet', $skin->price);
-            Skin::where('id', $skin->id)->decrement('stock', 1);
+            Skin::where('id', $skin->id)->update(['bought' => true]);
     
             DB::table('skin_user')->insert([
                 "user_id" => intval($user->id),
@@ -45,5 +46,39 @@ class SkinController extends Controller
         return response(['message' => "Skin purchased!", 'wallet updated' => $user->wallet, 'skin' => $skin], 200);
     }
 
+    public function userSkins(){
+        $user_skins = DB::table('skin_user')->where('user_id', Auth::user()->id)->get();
+        return response(['message' => "Skins searched!", 'count_skins' => count($user_skins), 'skins' => $user_skins], 200);
+    }
+
+    public function changeSkinColor(Request $request){
+
+        $user_id = Auth::user()->id;
+        $skin_id = intval($request->skin_id);
+
+        $validator = Validator::make($request->all(), [
+            'skin_id' =>'required | integer',
+            'color' =>'required | string',
+        ]);
+
+        if($validator->fails()){
+            return response(['error' => $validator->errors()], 406);
+        }
+
+        // $user_skins_unique_id = DB::table('skin_user')->where('user_id', $user_id)->pluck('id')->toArray();;
+        $skin_id_db = Skin::where('id', $skin_id)->first()->id;
+
+
+        if($skin_id === $skin_id_db){
+            Skin::where('id', $skin_id)->update(['color' => "red"]); 
+            // DB::table('skins')->where('id', $skin_id)->update(['color' => "red"]);            
+            return response(['message' => "Color cambiado existosamente!"], 200);
+        }else{
+            return response(['message' => "La skin_id introducida NO es tuya y por lo tanto, no la puedes modificar!"], 403);
+        }
+
+        //checkear si el skin_id es suya la skin
+        // return DB::table('skin_user')->where('user_id', $user_id)->get();
+    }
 
 }
