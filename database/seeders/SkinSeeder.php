@@ -24,6 +24,7 @@ class SkinSeeder extends Seeder
                 "category" => "Outfit",
                 "design_pattern" => "Scales",
                 "rarity" => "Legendary",
+                "stock" => rand(1, 1000),
             ]);
 
             DB::table('skin_user')->insert([

@@ -17,6 +17,7 @@ class Skin extends Model
         "category",
         "design_pattern",
         "rarity",
+        "stock",
     ];
 
     public function users(){
