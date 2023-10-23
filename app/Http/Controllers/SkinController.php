@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\SkinModel;
+use App\Models\Skin;
 
 class SkinController extends Controller
 {
     public function read(){
-        return SkinModel::all();
+        return Skin::all();
     }
 
     public function readOne($id){
-        $skin = SkinModel::find($id);
+        $skin = Skin::find($id);
         if($skin){
             return response(['skin' => $skin, 'message' => "Skin found!"], 200);
         }
@@ -37,13 +37,13 @@ class SkinController extends Controller
         }else{
             $types = json_encode($request->input('types'));
             $request['types'] = $types;
-            $skin = SkinModel::create($request->all());
+            $skin = Skin::create($request->all());
             return response(['skin' => $skin, 'message' => "Skin created!"], 200);
         }
     }
 
     public function update(Request $request, $id){
-        $skin = SkinModel::find($id);
+        $skin = Skin::find($id);
         
         if($skin->id === intval($id)){
             $validator = Validator::make($request->all(), [
@@ -70,7 +70,7 @@ class SkinController extends Controller
     }
 
     public function delete($id){
-        $skin = SkinModel::find($id);
+        $skin = Skin::find($id);
         if($skin->id === intval($id)){
             $skin->delete();
             return response(['message' => "Skin deleted!"], 200);

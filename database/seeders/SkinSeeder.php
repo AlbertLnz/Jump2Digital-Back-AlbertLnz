@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\SkinModel;
+use App\Models\Skin;
 
 class SkinSeeder extends Seeder
 {
@@ -13,7 +13,7 @@ class SkinSeeder extends Seeder
      */
     public function run(): void
     {
-        SkinModel::create([
+        Skin::create([
             "name" => "Rex",
             "types" => json_encode(["Dinosaur", "Human"]),
             "price" => 1200,
@@ -22,7 +22,7 @@ class SkinSeeder extends Seeder
             "design_pattern" => "Scales",
             "rarity" => "Legendary",
         ]);
-        SkinModel::create([
+        Skin::create([
             "name" => "Dark Bomber",
             "types" => json_encode(["Human"]),
             "price" => 1500,
