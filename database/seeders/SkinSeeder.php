@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Skin;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class SkinSeeder extends Seeder
 {
@@ -13,23 +15,21 @@ class SkinSeeder extends Seeder
      */
     public function run(): void
     {
-        Skin::create([
-            "name" => "Rex",
-            "types" => json_encode(["Dinosaur", "Human"]),
-            "price" => 1200,
-            "color" => "Green",
-            "category" => "Outfit",
-            "design_pattern" => "Scales",
-            "rarity" => "Legendary",
-        ]);
-        Skin::create([
-            "name" => "Dark Bomber",
-            "types" => json_encode(["Human"]),
-            "price" => 1500,
-            "color" => "Purple",
-            "category" => "Outfit",
-            "design_pattern" => "Dark Lightning",
-            "rarity" => "Epic",
-        ]);
+        for($i=0 ; $i<100 ; $i++){
+            Skin::create([
+                "name" => "Rex",
+                "types" => json_encode(["Dinosaur", "Human"]),
+                "price" => 1200,
+                "color" => "Green",
+                "category" => "Outfit",
+                "design_pattern" => "Scales",
+                "rarity" => "Legendary",
+            ]);
+
+            DB::table('skin_user')->insert([
+                "user_id" => intval(User::inRandomOrder()->first()->id),
+                'skin_id' => intval(Skin::latest()->first()->id),
+            ]);
+        }
     }
 }

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('skin_id')->nullable();
             
-            $table->foreign('user_id')->references('id')->on('skins')->onDelete('set null');
-            $table->foreign('skin_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('skin_id')->references('id')->on('skins')->onDelete('set null');
             
             $table->timestamps();
         });
