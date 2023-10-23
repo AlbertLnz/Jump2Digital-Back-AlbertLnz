@@ -15,7 +15,7 @@ class SkinSeeder extends Seeder
      */
     public function run(): void
     {
-        for($i=0 ; $i<100 ; $i++){
+        for($i=0 ; $i<1000 ; $i++){
             Skin::create([
                 "name" => "Rex",
                 "types" => json_encode(["Dinosaur", "Human"]),
@@ -24,7 +24,7 @@ class SkinSeeder extends Seeder
                 "category" => "Outfit",
                 "design_pattern" => "Scales",
                 "rarity" => "Legendary",
-                "stock" => rand(1, 1000),
+                "stock" => rand(0, 100),
             ]);
 
             DB::table('skin_user')->insert([
