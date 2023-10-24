@@ -49,7 +49,7 @@ class SkinControllerAdmin extends Controller
             $validator = Validator::make($request->all(), [
                 'name' => 'min:3',
                 'types' => 'max:50',
-                'price' => 'min:2',
+                'price' => 'min:1',
                 'color' => 'max: 20',
                 'category' =>'max: 20',
                 'design_pattern' =>'max: 20',
@@ -58,8 +58,6 @@ class SkinControllerAdmin extends Controller
             if($validator->fails()){
                 return response(['error' => $validator->errors()], 401);
             }else{
-                $types = json_encode($request->input('types'));
-                $request['types'] = $types;
                 $skin->update($request->all());
                 return response(['Skin updated' => $skin, 'message' => "Skin updated!"], 200);
             }

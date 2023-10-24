@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('category');
             $table->string('design_pattern');
             $table->string('rarity');
-            $table->boolean('bought');
+            $table->boolean('bought')->default(false);
             $table->timestamps();
         });
     }
