@@ -12,7 +12,7 @@ class PassportController extends Controller
         $validator = Validator::make($request->all(), [
             'name' =>'required | string',
             'email' =>'required | email',
-            'password' => 'min:6 | required'
+            'password' => 'min:4 | required'
         ]);
 
         if($validator->fails()){
@@ -35,7 +35,7 @@ class PassportController extends Controller
         $data = $request->all();
         $validator = Validator::make($data, [
             'email' =>'required | email',
-            'password' => 'min:6 | required'
+            'password' => 'min:4 | required'
         ]);
         if($validator->fails()){
             return response(['error' => $validator->errors(), "Validation error"], 302);
