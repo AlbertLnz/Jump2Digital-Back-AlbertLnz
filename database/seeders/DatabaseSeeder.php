@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(RoleSeeder::class);
+        $this->call(RoleSeeder::class); // assing roles
         $this->call(UserSeeder::class); // create an admin 
-        User::factory(10)->create();
-        // $this->call(SkinSeeder::class);
-        $this->call(SkinJSONSeeder::class);
+        User::factory(9)->create(); // create 9 clients
+        // $this->call(SkinSeeder::class); // generate 1000 same skins
+        $this->call(SkinJSONSeeder::class); // import JSON data of skins into my database
     }
 }

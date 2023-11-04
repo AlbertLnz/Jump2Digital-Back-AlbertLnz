@@ -92,13 +92,13 @@ class SkinController extends Controller
 
             if(in_array($skin_id, $user_skins_array)){
                 $this->skinServiceMethods->updateSkinColor($skin_id, $request->color);
-                return response(['message' => "Color cambiado existosamente!", 'skin' => Skin::find($skin_id)], 200);
+                return response(['message' => "Color successfully changed!", 'skin' => Skin::find($skin_id)], 200);
             }else{
-                return response(['message' => "La skin_id introducida NO es tuya y por lo tanto, no la puedes modificar!"], 403);
+                return response(['message' => "The introduced skin_id is NOT yours, and therefore, you cannot modify it!"], 403);
             }
         }
         else{
-            return response(['message' => "Skin no comprada por nadie, comprala para cambiarle el color!"], 403);
+            return response(['message' => "Skin not purchased by anyone, buy it to change its color!"], 403);
         }
     }
 
@@ -112,7 +112,7 @@ class SkinController extends Controller
                 $skin->delete();
                 return response(['message' => "Skin deleted correctly!" , "skin" => $skin], 200);
             }else{
-                return response(['message' => "No puedes eliminar una skin que no es tuya!!"], 403);
+                return response(['message' => "You cannot delete a skin that is not yours!"], 403);
             }
         }else{
             return response(['message' => "Skin not found!"], 404);
