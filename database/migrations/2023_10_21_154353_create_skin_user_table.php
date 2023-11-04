@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             
             
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('skin_id')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('skin_id');
             
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
-            $table->foreign('skin_id')->references('id')->on('skins')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('skin_id')->references('id')->on('skins')->onDelete('cascade');
             
             $table->timestamps();
         });

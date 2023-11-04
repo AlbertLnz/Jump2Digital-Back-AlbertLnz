@@ -22,6 +22,6 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
             'role' => 'admin',
             'wallet' => 10000,
-        ]);
+        ])->assignRole('admin');
     }
 }

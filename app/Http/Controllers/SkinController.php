@@ -79,7 +79,7 @@ class SkinController extends Controller
         ]);
 
         if($validator->fails()){
-            return response(['error' => $validator->errors()], 406);
+            return response(['error' => $validator->errors()], 400);
         }
 
         if(!$this->skinServiceMethods->findOneSkinByHisId($skin_id)){

@@ -24,7 +24,8 @@ class PassportController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'wallet' => 1000,
-        ]);
+            'role' => 'client'
+        ])->assignRole('client');
 
         $token = $user->createToken('Personal Access Token')->accessToken;
 

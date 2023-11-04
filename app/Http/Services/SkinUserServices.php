@@ -18,8 +18,12 @@ class SkinUserServices{
     }
 
     public function relationUserWithHisOneSkin($user_id, $skin_id){
-        DB::table('skin_user')->where('user_id', $user_id)->where('skin_id', $skin_id)->first();
+        return DB::table('skin_user')->where('user_id', $user_id)->where('skin_id', $skin_id)->first();
     }
+
+    // public function relationUserWithHisOneSkinDeleteAction($user_id, $skin_id){
+    //     return DB::table('skin_user')->where('user_id', $user_id)->where('skin_id', $skin_id)->first();
+    // }
 
 }
 
