@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'password' => password_hash('admin', PASSWORD_DEFAULT), // admin
             'remember_token' => Str::random(10),
             'role' => 'admin',
-            'wallet' => 1000000,
+            'wallet' => 10000,
         ]);
     }
 }

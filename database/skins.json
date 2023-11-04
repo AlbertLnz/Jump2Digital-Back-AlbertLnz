@@ -1,0 +1,362 @@
+[
+    {
+        "name": "Basic Skin",
+        "types": ["Default"],
+        "price": 100,
+        "color": "Gray",
+        "category": "Standard",
+        "design_pattern": "Solid Color",
+        "rarity": "Common"
+    },
+    {
+        "name": "Golden Armor",
+        "types": ["Armor"],
+        "price": 1500,
+        "color": "Gold",
+        "category": "Protection",
+        "design_pattern": "Embossed",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Golden Armor",
+        "types": ["Armor"],
+        "price": 1500,
+        "color": "Gold",
+        "category": "Protection",
+        "design_pattern": "Embossed",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Soccer Star",
+        "types": ["Jersey", "Sports"],
+        "price": 800,
+        "color": "Red",
+        "category": "Sports Apparel",
+        "design_pattern": "Stripes",
+        "rarity": "Common"
+    },
+    {
+        "name": "Camouflage Master",
+        "types": ["Cloak", "Military"],
+        "price": 1100,
+        "color": "Camouflage",
+        "category": "Tactical Gear",
+        "design_pattern": "Camouflage",
+        "rarity": "Uncommon"
+    },
+    {
+        "name": "Cyberpunk Augment",
+        "types": ["Augmentation", "Sci-Fi"],
+        "price": 1800,
+        "color": "Silver",
+        "category": "Futuristic Enhancements",
+        "design_pattern": "Tech",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Enchanted Robes",
+        "types": ["Robes", "Magic"],
+        "price": 1600,
+        "color": "Purple",
+        "category": "Witchcraft Attire",
+        "design_pattern": "Runes",
+        "rarity": "Epic"
+    },
+    {
+        "name": "Retro Pixel Blaster",
+        "types": ["Weapon", "Retro"],
+        "price": 900,
+        "color": "Neon",
+        "category": "Classic Gaming",
+        "design_pattern": "Pixel Art",
+        "rarity": "Uncommon"
+    },
+    {
+        "name": "Spooky Ghost Costume",
+        "types": ["Costume", "Halloween"],
+        "price": 1300,
+        "color": "White",
+        "category": "Holiday Special",
+        "design_pattern": "Ghosts",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Inferno Flame Armor",
+        "types": ["Armor", "Fire"],
+        "price": 2000,
+        "color": "Fiery Red",
+        "category": "Elemental Defense",
+        "design_pattern": "Flames",
+        "rarity": "Legendary"
+    },
+    {
+        "name": "Cybernetic Suit",
+        "types": ["Suit", "Futuristic"],
+        "price": 2200,
+        "color": "Silver",
+        "category": "High-Tech Apparel",
+        "design_pattern": "Glowing Lines",
+        "rarity": "Epic"
+    },
+    {
+        "name": "Cybernetic Suit",
+        "types": ["Suit", "Futuristic"],
+        "price": 2200,
+        "color": "Silver",
+        "category": "High-Tech Apparel",
+        "design_pattern": "Glowing Lines",
+        "rarity": "Epic"
+    },
+    {
+        "name": "Mad Scientist Lab Coat",
+        "types": ["Lab Coat", "Science"],
+        "price": 1100,
+        "color": "White",
+        "category": "Scientific Attire",
+        "design_pattern": "Chemical Formulas",
+        "rarity": "Uncommon"
+    },
+    {
+        "name": "Elven Archer's Garb",
+        "types": ["Garb", "Fantasy"],
+        "price": 1800,
+        "color": "Green",
+        "category": "Realm of Magic",
+        "design_pattern": "Elven Runes",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Robotic Exoskeleton",
+        "types": ["Exoskeleton", "Technology"],
+        "price": 2500,
+        "color": "Metallic Silver",
+        "category": "Advanced Gear",
+        "design_pattern": "Circuitry",
+        "rarity": "Legendary"
+    },
+    {
+        "name": "Phantom Cloak",
+        "types": ["Cloak", "Ghostly"],
+        "price": 1600,
+        "color": "Translucent",
+        "category": "Haunting Attire",
+        "design_pattern": "Ethereal Spirits",
+        "rarity": "Epic"
+    },
+    {
+        "name": "Rockstar Outfit",
+        "types": ["Outfit", "Music"],
+        "price": 1200,
+        "color": "Black",
+        "category": "Musician's Attire",
+        "design_pattern": "Musical Notes",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Pirate Captain's Coat",
+        "types": ["Coat", "Nautical"],
+        "price": 1700,
+        "color": "Dark Blue",
+        "category": "Seafaring Apparel",
+        "design_pattern": "Jolly Roger",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Frosty Snowflake Sweater",
+        "types": ["Sweater", "Winter"],
+        "price": 900,
+        "color": "Blue",
+        "category": "Holiday Knitwear",
+        "design_pattern": "Snowflakes",
+        "rarity": "Common"
+    },
+    {
+        "name": "Mighty Hero Cape",
+        "types": ["Cape", "Superhero"],
+        "price": 1900,
+        "color": "Red",
+        "category": "Heroic Attire",
+        "design_pattern": "Emblem",
+        "rarity": "Epic"
+    },
+    {
+        "name": "Diamond-Studded Armor",
+        "types": ["Armor", "Luxury"],
+        "price": 3000,
+        "color": "Silver",
+        "category": "High-End Protection",
+        "design_pattern": "Diamonds",
+        "rarity": "Legendary"
+    },
+    {
+        "name": "Jungle Explorer Outfit",
+        "types": ["Outfit", "Adventure"],
+        "price": 1400,
+        "color": "Khaki",
+        "category": "Explorer's Attire",
+        "design_pattern": "Leaves and Vines",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Circus Performer Costume",
+        "types": ["Costume", "Circus"],
+        "price": 1200,
+        "color": "Colorful",
+        "category": "Entertainer's Attire",
+        "design_pattern": "Big Top Stripes",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Circus Performer Costume",
+        "types": ["Costume", "Circus"],
+        "price": 1200,
+        "color": "Colorful",
+        "category": "Entertainer's Attire",
+        "design_pattern": "Big Top Stripes",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Royal Robes",
+        "types": ["Robes", "Royalty"],
+        "price": 2200,
+        "color": "Purple",
+        "category": "Monarch's Attire",
+        "design_pattern": "Golden Embroidery",
+        "rarity": "Legendary"
+    },
+    {
+        "name": "Tropical Fruit Ensemble",
+        "types": ["Outfit", "Fruit"],
+        "price": 1100,
+        "color": "Fruit Colors",
+        "category": "Fruity Fashion",
+        "design_pattern": "Fruit Prints",
+        "rarity": "Uncommon"
+    },
+    {
+        "name": "Creepy Clown Costume",
+        "types": ["Costume", "Horror"],
+        "price": 1300,
+        "color": "White and Red",
+        "category": "Horror Show",
+        "design_pattern": "Scary Clown Face",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Fast Food Attire",
+        "types": ["Outfit", "Food"],
+        "price": 900,
+        "color": "Burger Colors",
+        "category": "Fast Food Fanatic",
+        "design_pattern": "Food Icons",
+        "rarity": "Common"
+    },
+    {
+        "name": "Fast Food Attire",
+        "types": ["Outfit", "Food"],
+        "price": 900,
+        "color": "Burger Colors",
+        "category": "Fast Food Fanatic",
+        "design_pattern": "Food Icons",
+        "rarity": "Common"
+    },
+    {
+        "name": "Wild West Gunslinger Outfit",
+        "types": ["Outfit", "Western"],
+        "price": 1800,
+        "color": "Brown and Tan",
+        "category": "Frontier Wear",
+        "design_pattern": "Sheriff's Badge",
+        "rarity": "Epic"
+    },
+    {
+        "name": "Haunted Mansion Attire",
+        "types": ["Outfit", "Horror"],
+        "price": 2000,
+        "color": "Black and Gray",
+        "category": "Haunted House Costume",
+        "design_pattern": "Ghosts and Cobwebs",
+        "rarity": "Legendary"
+    },
+    {
+        "name": "Starry Night Cloak",
+        "types": ["Cloak", "Astronomy"],
+        "price": 1500,
+        "color": "Dark Blue with Stars",
+        "category": "Stargazer's Garb",
+        "design_pattern": "Galactic Constellations",
+        "rarity": "Epic"
+    },
+    {
+        "name": "Space Shuttle Paint",
+        "types": ["Vehicle", "Space"],
+        "price": 2500,
+        "color": "White and NASA Blue",
+        "category": "Interstellar Crafts",
+        "design_pattern": "Space Agency Logo",
+        "rarity": "Legendary"
+    },
+    {
+        "name": "Mechanical Exosuit",
+        "types": ["Exosuit", "Robotic"],
+        "price": 2200,
+        "color": "Metallic Silver",
+        "category": "Advanced Robotics",
+        "design_pattern": "Circuitry",
+        "rarity": "Epic"
+    },
+    {
+        "name": "Mechanical Exosuit",
+        "types": ["Exosuit", "Robotic"],
+        "price": 2200,
+        "color": "Metallic Silver",
+        "category": "Advanced Robotics",
+        "design_pattern": "Circuitry",
+        "rarity": "Epic"
+    },
+    {
+        "name": "Tropical Rainforest Explorer",
+        "types": ["Outfit", "Jungle"],
+        "price": 1400,
+        "color": "Lush Green",
+        "category": "Rainforest Adventurer",
+        "design_pattern": "Tropical Foliage",
+        "rarity": "Rare"
+    },
+    {
+        "name": "School Uniform",
+        "types": ["Uniform", "Academic"],
+        "price": 1000,
+        "color": "Navy Blue",
+        "category": "Student Attire",
+        "design_pattern": "School Emblem",
+        "rarity": "Common"
+    },
+    {
+        "name": "School Uniform",
+        "types": ["Uniform", "Academic"],
+        "price": 1000,
+        "color": "Navy Blue",
+        "category": "Student Attire",
+        "design_pattern": "School Emblem",
+        "rarity": "Common"
+    },
+    {
+        "name": "School Uniform",
+        "types": ["Uniform", "Academic"],
+        "price": 1000,
+        "color": "Navy Blue",
+        "category": "Student Attire",
+        "design_pattern": "School Emblem",
+        "rarity": "Common"
+    },
+    {
+        "name": "School Uniform",
+        "types": ["Uniform", "Academic"],
+        "price": 1000,
+        "color": "Navy Blue",
+        "category": "Student Attire",
+        "design_pattern": "School Emblem",
+        "rarity": "Common"
+    }
+]

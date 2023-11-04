@@ -3,7 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SkinController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\PassportController;
 use App\Http\Controllers\SkinControllerAdmin;
 
@@ -26,7 +25,7 @@ Route::post('/skins/buy/{skin_id}', [SkinController::class, 'buySkin'])->name('a
 Route::get('/skins/myskins', [SkinController::class, 'userSkins'])->name('api.skins.myskins')->middleware('auth:api'); // 3. GET /skins/myskins - Devuelve una lista de las skins compradas por el usuario
 Route::put('skins/color', [SkinController::class, 'changeSkinColor'])->name('')->middleware('auth:api'); // 4. PUT /skins/color - Permite a los usuarios cambiar el color de una skin comprada. 
 Route::delete('skins/delete/{id}', [SkinController::class, 'deleteUserSkin'])->name('api.skin.delete')->middleware('auth:api'); // 5. DELETE /skins/delete/{id} - Permite a los usuarios eliminar una skin comprada. 
-Route::get('/skin/getskin/{id}', [SkinControllerAdmin::class,'readOne'])->name('api.skins.readOne');
+Route::get('/skin/getskin/{id}', [SkinControllerAdmin::class,'readOne'])->name('api.skins.readOne'); // 6. GET /skin/getskin/{id} - Devuelve una determinada skin.
 
 // ADMIN ROUTES (CRUD SKIN)
 Route::group(['prefix' => 'skins'], function() {
