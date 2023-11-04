@@ -1,66 +1,96 @@
+# Descripción
+Proyecto de la prueba de acceso de la parte Backend a la Hackathon de Jump2Digital que consiste en realizar una API que permite a los usuarios consultar, adquirir, modificar y eliminar skins de un videojuego. Para ello, se ha implementado un sistema de login y un sistema de roles para el acceso de rutas mediante un patrón MVC con capa de servicio para funciones externas. Además, como parte del requisito de la prueba, incluye una función que transfiere los datos de un JSON a la base de datos SQL (SkinJSONSeeder).
+
+# Uso del deploy
+Para hacer uso del deploy, ir a la siguiente API: https://j2d-albertlnz.onrender.com/api <br>
+Puede hacer uso del usuario administrador, que le permite acceder a todas las rutas del proyecto: <br>
+    **email:** ```
+	admin@example.com
+	```
+ <br>
+    **password:** ```
+	admin
+	```
+<br><br>
+También le facilito los usuarios (email / contraseña) de role cliente implementados en la base de datos:
+ - hattie.beatty@example.org / password
+ - alek43@example.com / password
+ - vfisher@example.org / password
+ - lindsay.hessel@example.com / password
+ - brekke.shayne@example.org / password
+ - sawayn.benjamin@example.com / password
+ - zborer@example.net / password
+ - kovacek.madisyn@example.org / password
+ - cordelia78@example.org / password
+
+## Rutas de logeo
+LOGIN: https://j2d-albertlnz.onrender.com/api/login <br>
+REGISTER: https://j2d-albertlnz.onrender.com/api/register
+
+## Rutas requiridas para la prueba
+1. SKINS DISPONIBLES PARA COMPRAR (GET): https://j2d-albertlnz.onrender.com/api/skins/available
+2. USUARIO COMPRAR SKIN (POST): https://j2d-albertlnz.onrender.com/api/skins/buy/{skin_id} ***(login necesario)***
+3. SKINS DEL USUARIO (GET): https://j2d-albertlnz.onrender.com/api/skins/myskins ***(login necesario)***
+4. CAMBIAR EL COLOR DE UNA SKIN DEL USUARIO (PUT): https://j2d-albertlnz.onrender.com/api/skins/color ***(login necesario)***
+5. ELIMINAR UNA SKIN DEL USUARIO (DELETE): https://j2d-albertlnz.onrender.com/api/skins/delete/{skin_id} ***(login necesario)***
+6. DEVUELVE UNA DETERMINADA SKIN (GET): https://j2d-albertlnz.onrender.com/api/skin/getskin/{skin_id} ***(login necesario)***
+
+## Rutas extras (SKIN CRUD con diferentes niveles de seguridad a través de roles {Spatie})
+7. MOSTRAR TODAS LAS SKINS (GET): https://j2d-albertlnz.onrender.com/api/skins ***(login de admin necesario)***
+8. CREAR UNA SKIN (POST): https://j2d-albertlnz.onrender.com/api/skins ***(login de admin necesario)***
+9. EDITAR UNA SKIN (PUT): https://j2d-albertlnz.onrender.com/api/skins/{$skin_id} ***(login de admin necesario)***
+10. ELIMINAR UNA SKIN (DELETE): https://j2d-albertlnz.onrender.com/api/skins/{$skin_id}
+
+## Resumen de las rutas:
+![image](https://github.com/AlbertLnz/Jump2Digital-Back-AlbertLnz/assets/120119395/3e9e62cc-8d62-4fc6-80ba-21e87072f42a)
+
+
+# Instalación en local
+Para hacer una instalación correcta de este proyecto de manera local, siga los siguientes pasos: <br>
+
+0. Antes de empezar, asegurese de tener instalado PHP, Laravel y Composer
+    
+1. Clonese el repositorio
+    ```
+	git clone https://github.com/AlbertLnz/dice-API.git
+	```
+2. Entre dentro de la carpeta del proyecto
+    ```
+	cd .\Jump2Digital-Back-AlbertLnz\
+	```
+    
+3. Edite el archivo **.env.example** y conviertalo en un archivo llamado **.env** para así poder hacer la migración a su servidor SQL (haga la configuración necesaria para vincularlo a su servidor SQL):
+    ```
+	DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=jump2digital_back_albertlnz
+    DB_USERNAME=root
+    DB_PASSWORD=
+	```
+
+4. Haga la instalación de las dependencias con el siguiente comando en la terminal (asegurése de estar dentro del proyecto [paso nº 2])
+    ```
+	composer install
+	```
+   
+5. Ahora ejecute el comando el siguiente comando personalizado para: <br>
+    · Realizar la migración <br>
+    · Realizar la subida de datos a través del archivo **skins.json** a la base de datos <br>
+    · Instalar las Laravel Passport para que las rutas que necesitan autentificación funcionen correctamente <br>
+    · Generar la key del proyecto <br>
+    ```
+	php artisan start-project
+    ```
+
+6. Y ahora ya puede inicializar el proyecto con el comando:
+    ```
+	php artisan serve
+	```
+
+    *Para ver el ruteo del proyecto, puede hacer uso del comando: **php artisan route:list***
+
+
+# Proyecto realizado con
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
