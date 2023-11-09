@@ -25,7 +25,7 @@ También le facilito los usuarios (email / contraseña) de role cliente implemen
 
 ## Rutas de logeo
 LOGIN (POST): https://j2d-albertlnz.onrender.com/api/login <br>
-REGISTER (POST): https://j2d-albertlnz.onrender.com/api/register
+REGISTER (POST): https://j2d-albertlnz.onrender.com/api/register <br>
 *If you try to access these routes through your browser, you will see a 405 error because they are POST routes and not GET! You can prove it in Postman!!*
 
 ## Rutas requiridas para la prueba
