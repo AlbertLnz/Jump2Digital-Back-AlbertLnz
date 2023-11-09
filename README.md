@@ -24,8 +24,9 @@ También le facilito los usuarios (email / contraseña) de role cliente implemen
  - cordelia78@example.org / password
 
 ## Rutas de logeo
-LOGIN: https://j2d-albertlnz.onrender.com/api/login <br>
-REGISTER: https://j2d-albertlnz.onrender.com/api/register
+LOGIN (POST): https://j2d-albertlnz.onrender.com/api/login <br>
+REGISTER (POST): https://j2d-albertlnz.onrender.com/api/register
+*If you try to access these routes through your browser, you will see a 405 error because they are POST routes and not GET! You can prove it in Postman!!*
 
 ## Rutas requiridas para la prueba
 1. SKINS DISPONIBLES PARA COMPRAR (GET): https://j2d-albertlnz.onrender.com/api/skins/available
